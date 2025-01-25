@@ -9,6 +9,6 @@ public class SphereMovement : MonoBehaviour
     public void Update()
     {
         //rb.AddRelativeTorque(keyValues.x * rotationSpeed * Time.deltaTime, 0, keyValues.y * rotationSpeed * Time.deltaTime);
-        transform.Rotate(new Vector3(Input.GetAxisRaw("Vertical") * rotationSpeed * Time.deltaTime, -Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime, 0),Space.World);
+        transform.Rotate(new Vector3(Input.GetAxis("Vertical") * rotationSpeed * Time.deltaTime, -Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0),Space.World);
     }
 }
