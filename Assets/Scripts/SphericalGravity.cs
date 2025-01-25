@@ -19,9 +19,7 @@ public class SphericalGravity : MonoBehaviour
     {
         foreach (Rigidbody rgBall in rgBalls)
         {
-            rgBall.AddForce(Vector3.Normalize(transform.position - rgBall.position)
-                * forceFactor
-                * Time.fixedDeltaTime);
+            rgBall.AddForce(Vector3.Normalize(transform.position - rgBall.position) * forceFactor *Time.fixedDeltaTime);
         }
     }
 
