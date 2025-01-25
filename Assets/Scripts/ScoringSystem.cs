@@ -9,7 +9,7 @@ public class ScoringSystem : MonoBehaviour
 
     private Rigidbody rb;
 
-    private int score = 0;
+    private static int score = 0;
     public float normalMultiplier = 1f;
 
     private void Start()

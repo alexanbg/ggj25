@@ -26,7 +26,7 @@ public class CameraShake : MonoBehaviour
     {
         camTransform = transform;
         originalPos = camTransform.localPosition;
-        shakedurationTracker = shakedurationTracker;
+        shakedurationTracker = shakeDuration;
     }
 
     
