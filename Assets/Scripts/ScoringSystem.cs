@@ -17,6 +17,8 @@ public class ScoringSystem : MonoBehaviour
 
     [SerializeField]
     private AudioSource hitSound;
+    [SerializeField]
+    private ParticleSystem hitEffect;
 
 
     private void Start()
@@ -29,6 +31,7 @@ public class ScoringSystem : MonoBehaviour
     {
         UpdateScore(1);
         hitSound.Play();
+        Instantiate(hitEffect.gameObject).transform.position = transform.position;
         Vector3 normal = collision.GetContact(0).normal;
         rb.AddForce(normal * normalMultiplier, ForceMode.Force);
     }
