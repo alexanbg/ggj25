@@ -8,13 +8,16 @@ public class ScorePickUp : MonoBehaviour
     private float outterCircleradius;
     [SerializeField]
     private float minTeleportDistance;
+    [SerializeField]
+    private AudioSource pickUpSound;
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Collided with {LayerMask.LayerToName(collision.collider.gameObject.layer)}");
+        //Debug.Log($"Collided with {LayerMask.LayerToName(collision.collider.gameObject.layer)}");
         if (LayerMask.LayerToName(collision.collider.gameObject.layer)=="Ball")
         {
             collision.collider.transform.GetComponent<ScoringSystem>().UpdateScore(200);
+            pickUpSound.Play();
             Respawn();
         }
     }
