@@ -20,6 +20,8 @@ public class MultiplyPowerUp : MonoBehaviour
     private AudioSource ballSpawnSound;
     [SerializeField]
     private ParticleSystem pickUpEffect;
+    [SerializeField]
+    private GameObject VFX;
 
     private Collider collider;
     private MeshRenderer renderer;
@@ -47,6 +49,7 @@ public class MultiplyPowerUp : MonoBehaviour
     {
         collider.enabled = false;
         renderer.enabled = false;
+        VFX.SetActive(false);
         for(int i = 0; i < ballCopies; i++)
         {
             yield return new WaitForSeconds(0.5f);
@@ -64,6 +67,7 @@ public class MultiplyPowerUp : MonoBehaviour
         copies = new List<GameObject>();
         collider.enabled = true;
         renderer.enabled = true;
+        VFX.SetActive(true);
         Respawn();
     } 
 
