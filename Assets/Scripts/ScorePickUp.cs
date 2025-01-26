@@ -10,6 +10,8 @@ public class ScorePickUp : MonoBehaviour
     private float minTeleportDistance;
     [SerializeField]
     private AudioSource pickUpSound;
+    [SerializeField]
+    private ParticleSystem pickUpEffect;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,6 +20,8 @@ public class ScorePickUp : MonoBehaviour
         {
             collision.collider.transform.GetComponent<ScoringSystem>().UpdateScore(200);
             pickUpSound.Play();
+            Instantiate(pickUpEffect.gameObject).transform.position = transform.position;
+
             Respawn();
         }
     }

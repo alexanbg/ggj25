@@ -15,6 +15,9 @@ public class ScoringSystem : MonoBehaviour
     private static int score = 0;
     public float normalMultiplier = 1f;
 
+    [SerializeField]
+    private AudioSource hitSound;
+
 
     private void Start()
     {
@@ -25,6 +28,7 @@ public class ScoringSystem : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         UpdateScore(1);
+        hitSound.Play();
         Vector3 normal = collision.GetContact(0).normal;
         rb.AddForce(normal * normalMultiplier, ForceMode.Force);
     }
