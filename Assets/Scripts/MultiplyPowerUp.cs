@@ -18,6 +18,8 @@ public class MultiplyPowerUp : MonoBehaviour
     private AudioSource pickUpSound;
     [SerializeField]
     private AudioSource ballSpawnSound;
+    [SerializeField]
+    private ParticleSystem pickUpEffect;
 
     private Collider collider;
     private MeshRenderer renderer;
@@ -36,6 +38,7 @@ public class MultiplyPowerUp : MonoBehaviour
         if (LayerMask.LayerToName(collision.collider.gameObject.layer) == "Ball")
         {
             pickUpSound.Play();
+            Instantiate(pickUpEffect.gameObject).transform.position = transform.position;
             StartCoroutine(SpawnBalls(collision.collider.gameObject));
         }
     }

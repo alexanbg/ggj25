@@ -105,6 +105,7 @@ MonoBehaviour:
   outterCircleradius: 3
   minTeleportDistance: 4
   pickUpSound: {fileID: 1447505303389297884}
+  pickUpEffect: {fileID: 263449189518430397, guid: 909690031e1fbbc439b3a4ef71e23afd, type: 3}
 --- !u!135 &323613989179883029
 SphereCollider:
   m_ObjectHideFlags: 0

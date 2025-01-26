@@ -109,6 +109,7 @@ MonoBehaviour:
   sphericalGravity: {fileID: 0}
   pickUpSound: {fileID: 316526775656319850}
   ballSpawnSound: {fileID: 1633960598428095767}
+  pickUpEffect: {fileID: 263449189518430397, guid: 909690031e1fbbc439b3a4ef71e23afd, type: 3}
 --- !u!135 &7890883566845478617
 SphereCollider:
   m_ObjectHideFlags: 0
