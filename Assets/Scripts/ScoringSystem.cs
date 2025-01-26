@@ -23,7 +23,7 @@ public class ScoringSystem : MonoBehaviour
         rb.AddForce(normal * normalMultiplier, ForceMode.Force);
     }
 
-    private void UpdateScore(int increment)
+    public void UpdateScore(int increment)
     {
         score += increment;
         text.text = $"SCORE\n{score:d4}";

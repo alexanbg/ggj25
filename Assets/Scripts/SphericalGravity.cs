@@ -6,7 +6,7 @@ public class SphericalGravity : MonoBehaviour
     public float forceFactor = 200f;
 
     [SerializeField]
-    private List<Rigidbody> rgBalls;
+    public List<Rigidbody> rgBalls;
 
     Transform magnetP;
 
