@@ -31,7 +31,7 @@ public class ScoringSystem : MonoBehaviour
     {
         UpdateScore(1);
         hitSound.Play();
-        Instantiate(hitEffect.gameObject).transform.position = transform.position;
+        Instantiate(hitEffect.gameObject).transform.position = collision.GetContact(0).point;
         Vector3 normal = collision.GetContact(0).normal;
         rb.AddForce(normal * normalMultiplier, ForceMode.Force);
     }
