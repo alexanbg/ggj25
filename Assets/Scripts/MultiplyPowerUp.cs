@@ -14,7 +14,10 @@ public class MultiplyPowerUp : MonoBehaviour
     private int ballCopies;
     [SerializeField]
     private SphericalGravity sphericalGravity;
-
+    [SerializeField]
+    private AudioSource pickUpSound;
+    [SerializeField]
+    private AudioSource ballSpawnSound;
 
     private Collider collider;
     private MeshRenderer renderer;
@@ -32,6 +35,7 @@ public class MultiplyPowerUp : MonoBehaviour
         Debug.Log($"Collided with {LayerMask.LayerToName(collision.collider.gameObject.layer)}");
         if (LayerMask.LayerToName(collision.collider.gameObject.layer) == "Ball")
         {
+            pickUpSound.Play();
             StartCoroutine(SpawnBalls(collision.collider.gameObject));
         }
     }
@@ -46,6 +50,7 @@ public class MultiplyPowerUp : MonoBehaviour
             copies.Add(Instantiate(ball));
             copies[i].transform.position = transform.position;
             sphericalGravity.rgBalls.Add(copies[i].GetComponent<Rigidbody>());
+            ballSpawnSound.Play();
         }
         yield return new WaitForSeconds(10);
         foreach (var copy in copies)
