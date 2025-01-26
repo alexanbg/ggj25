@@ -66,7 +66,7 @@ public class MultiplyPowerUp : MonoBehaviour
         }
         copies = new List<GameObject>();
         collider.enabled = true;
-        renderer.enabled = true;
+        //renderer.enabled = true;
         VFX.SetActive(true);
         Respawn();
     } 
