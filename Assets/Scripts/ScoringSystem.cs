@@ -29,7 +29,7 @@ public class ScoringSystem : MonoBehaviour
         rb.AddForce(normal * normalMultiplier, ForceMode.Force);
     }
 
-    private void UpdateScore(int increment)
+    public void UpdateScore(int increment)
     {
         if (valid == true)
         {
@@ -56,7 +56,7 @@ public class ScoringSystem : MonoBehaviour
             targetTime -= Time.deltaTime;
 
 
-            TimeText.text = "TIME:" + "\n  " + Mathf.Round(targetTime);
+            TimeText.text = "TIME" + "\n" + Mathf.Round(targetTime);
 
             if (targetTime <= 0.0f)
             {
@@ -67,11 +67,11 @@ public class ScoringSystem : MonoBehaviour
         {
             if(score*100 > 50000)
             {
-                GameOver.text = "         Good job. YOU WON!";
+                GameOver.text = "Good job. YOU WON!";
             }
             else
             {
-                GameOver.text = "         YOU LOST!hAHAHA-";
+                GameOver.text = "YOU LOST!hAHAHA-";
             }
             GameOver.gameObject.SetActive(!valid);
         }
