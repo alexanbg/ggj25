@@ -44,6 +44,7 @@ public class MultiplyPowerUp : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             copies.Add(Instantiate(ball));
+            copies[i].transform.position = transform.position;
             sphericalGravity.rgBalls.Add(copies[i].GetComponent<Rigidbody>());
         }
         yield return new WaitForSeconds(10);
