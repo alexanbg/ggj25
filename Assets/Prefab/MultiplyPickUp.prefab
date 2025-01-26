@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4974920106479764843}
   - component: {fileID: 720864779574220686}
   - component: {fileID: 809402050581272945}
-  - component: {fileID: 7775524673910074474}
   - component: {fileID: 4993014579614342279}
+  - component: {fileID: 7890883566845478617}
   m_Layer: 0
   m_Name: MultiplyPickUp
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.11, y: 3.3, z: 1.8556284}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883226185230039670}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5741162515470049585, guid: 051d8aefeb5c2cc4b8eb11bbc76671d6, type: 3}
 --- !u!23 &809402050581272945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2ac1aff9c22730e4483fa36e0ccd33b1, type: 2}
+  - {fileID: 2100000, guid: c1c80eab01df9e44399712d74a2d60a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,8 +88,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7775524673910074474
-BoxCollider:
+--- !u!114 &4993014579614342279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883226185230039670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dec303369f051c48b203c5c841d70e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  innerCircleRadius: 2
+  outterCircleradius: 3
+  minTeleportDistance: 4
+  ballCopies: 4
+  sphericalGravity: {fileID: 0}
+--- !u!135 &7890883566845478617
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,22 +124,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4993014579614342279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883226185230039670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dec303369f051c48b203c5c841d70e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  innerCircleRadius: 2
-  outterCircleradius: 3
-  minTeleportDistance: 4
-  ballCopies: 2
-  sphericalGravity: {fileID: 0}
+  m_Radius: 2.0234776
+  m_Center: {x: -0.061464787, y: 0.61775637, z: -0.70337844}
